@@ -10,6 +10,138 @@ html,
   font-family: "Epilogue", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: var(--almostBlack);
+  margin: 0px;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
 body {
   font-size: 18px;
+  background-color: var(--almostWhite);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+}
+
+.left-side-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0px;
+}
+
+.nav-menu-item {
+  margin-left: 1rem;
+}
+
+.right-side-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-btn {
+  background-color: transparent;
+  border: 1px solid var(--almostBlack);
+  color: var(--almostBlack);
+  padding: 10px 20px;
+  border-radius: 0.8rem;
+  margin-left: 1rem;
+}
+
+.hero-section {
+  display: flex;
+  margin: 1.5rem 12rem 0rem 12rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.hero-p {
+  color: var(--mediumGray);
+  font-size: 1.6rem;
+}
+
+.hero-btn {
+  background-color: var(--almostBlack);
+  border: 1px solid var(--almostBlack);
+  color: var(--almostWhite);
+  padding: 0.8em 1.6em;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+}
+.hero-btn:hover {
+  background-color: transparent;
+  color: var(--almostBlack);
+}
+
+.hero-image {
+  width: 32vw;
+}
+
+.hamburger-menu-btn {
+  background-color: transparent;
+  margin: 0px;
+  border: none;
+}
+
+@media (max-width: 1168px) {
+  .hero-section {
+    display: flex;
+    margin: 2rem 4rem 0rem 4rem;
+  }
+  .hero-image {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2em;
+  }
+  .hero-section {
+    flex-direction: column-reverse;
+    margin: 1.5rem 0rem 0rem 0rem;
+  }
+  .hero-left {
+    width: 90%;
+    align-items: center;
+  }
+  .hero-p {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .hero-image {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
