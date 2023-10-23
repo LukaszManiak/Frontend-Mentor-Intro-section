@@ -110,6 +110,16 @@ h1 {
   border: none;
 }
 
+.attribution-p {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.attribution-link:hover {
+  text-decoration: underline;
+
+  color: hsl(243, 79%, 68%);
+}
 @media (max-width: 1168px) {
   .hero-section {
     display: flex;
