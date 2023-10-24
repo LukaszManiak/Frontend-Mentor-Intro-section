@@ -5,6 +5,12 @@ import imageHeroMobile from "./images/image-hero-mobile.png";
 import logoSvg from "./images/logo.svg";
 import menuSvg from "./images/icon-menu.svg";
 import closeSvg from "./images/icon-close-menu.svg";
+import client2 from "./images/client-audiophile.svg";
+import client1 from "./images/client-databiz.svg";
+import client4 from "./images/client-maker.svg";
+import client3 from "./images/client-meet.svg";
+
+const clients = [client1, client2, client3, client4];
 
 function App() {
   const [imgSrc, setImgSrc] = useState(imageHero);
@@ -103,6 +109,17 @@ function HeroSection({ heroImg }) {
           create team rituals, and watch productivity soar.
         </p>
         <Button className={"hero-btn"}>Learn more</Button>
+        <div className="clients-container">
+          {clients.map((client) => {
+            return (
+              <img
+                className="client"
+                src={client}
+                alt={"client" + clients.indexOf(client)}
+              />
+            );
+          })}
+        </div>
       </div>
       <img className="hero-image" src={heroImg} alt="hero-image" />
     </div>
