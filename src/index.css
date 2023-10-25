@@ -7,6 +7,7 @@
 
 html,
 * {
+  overflow-x: hidden;
   font-family: "Epilogue", sans-serif;
 }
 
@@ -30,6 +31,31 @@ h1 {
   font-size: 4rem;
 }
 
+.dark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--almostBlack);
+  opacity: 0.7;
+}
+
+.hidden {
+  display: none;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 15;
+  background-color: var(--almostWhite);
+  width: 60vw;
+  height: 100vh;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -42,8 +68,16 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
-.nav-menu {
+.nav-desktop-menu {
   display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0px;
+}
+
+.nav-mobile-menu {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   list-style: none;
   margin: 0px;
@@ -118,10 +152,11 @@ h1 {
   background-color: transparent;
   margin: 0px;
   border: none;
+  z-index: 20;
 }
 
 .attribution-p {
-  margin-top: 10%;
+  margin: 10% 2rem 0 2rem;
   text-align: center;
 }
 

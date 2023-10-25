@@ -9,6 +9,8 @@ import client2 from "./images/client-audiophile.svg";
 import client1 from "./images/client-databiz.svg";
 import client4 from "./images/client-maker.svg";
 import client3 from "./images/client-meet.svg";
+import arrowUp from "./images/icon-arrow-up.svg";
+import arrowDown from "./images/icon-arrow-down.svg";
 
 const clients = [client1, client2, client3, client4];
 
@@ -25,6 +27,7 @@ function App() {
     if (window.innerWidth >= 768) {
       setImgSrc(imageHero);
       setMobileView(true);
+      setIsOpen(false);
     } else {
       setImgSrc(imageHeroMobile);
       setMobileView(false);
@@ -35,11 +38,17 @@ function App() {
 
   return (
     <>
+      <div className={isOpen ? "dark-bg" : "dark-bg hidden"}></div>
       <Navbar
         mobileView={mobileView}
         onChangeOpen={changeOpenStatus}
         isOpen={isOpen}
       />
+      <div className={isOpen ? "mobile-menu" : "mobile-menu hidden"}>
+        {" "}
+        <NavMenu className={"nav-mobile-menu"} />
+        <NavButtons className={"nav-mobile-menu "} />
+      </div>
       <HeroSection heroImg={imgSrc} />
       <AttributionP />
     </>
@@ -55,31 +64,11 @@ function Navbar({ mobileView, onChangeOpen, isOpen }) {
           <img src={logoSvg} alt="" />
         </a>
 
-        {mobileView && (
-          <ul className="nav-menu">
-            <li className="nav-menu-item">
-              <a href="#">Features</a>
-            </li>
-            <li className="nav-menu-item">
-              <a href="#"> Company</a>
-            </li>
-            <li className="nav-menu-item">
-              <a href="#">Careers</a>
-            </li>
-            <li className="nav-menu-item">
-              <a href="#">About</a>
-            </li>
-          </ul>
-        )}
+        {mobileView && <NavMenu className={"nav-desktop-menu"} />}
       </div>
 
       <div className="right-side-nav">
-        {mobileView && (
-          <>
-            <a href="#">Login</a>
-            <Button className={"register-btn"}>Register</Button>
-          </>
-        )}
+        {mobileView && <NavButtons />}
         {!mobileView && (
           <Button onClick={onChangeOpen} className={"hamburger-menu-btn"}>
             <img src={!isOpen ? menuSvg : closeSvg} alt="hamburger-menu-icon" />
@@ -95,6 +84,15 @@ function Button({ children, className, onClick }) {
     <button onClick={() => onClick()} className={className}>
       {children}
     </button>
+  );
+}
+
+function NavButtons({ className }) {
+  return (
+    <div className={className}>
+      <a href="#">Login</a>
+      <Button className={"register-btn"}>Register</Button>
+    </div>
   );
 }
 
@@ -142,6 +140,27 @@ function AttributionP() {
       </a>
       .
     </p>
+  );
+}
+
+function NavMenu({ className }) {
+  return (
+    <ul className={className}>
+      <li className="nav-menu-item">
+        <a href="#">Features</a>
+        <img src={arrowDown} alt="arrow down" />
+      </li>
+      <li className="nav-menu-item">
+        <a href="#"> Company</a>
+        <img src={arrowDown} alt="arrow down" />
+      </li>
+      <li className="nav-menu-item">
+        <a href="#">Careers</a>
+      </li>
+      <li className="nav-menu-item">
+        <a href="#">About</a>
+      </li>
+    </ul>
   );
 }
 export default App;
