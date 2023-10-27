@@ -47,7 +47,7 @@ function App() {
       <div className={isOpen ? "mobile-menu" : "mobile-menu hidden"}>
         {" "}
         <NavMenu className={"nav-mobile-menu"} />
-        <NavButtons className={"nav-mobile-menu "} />
+        <NavButtons className={"nav-mobile-buttons "} />
       </div>
       <HeroSection heroImg={imgSrc} />
       <AttributionP />
@@ -148,11 +148,11 @@ function NavMenu({ className }) {
     <ul className={className}>
       <li className="nav-menu-item">
         <a href="#">Features</a>
-        <img src={arrowDown} alt="arrow down" />
+        <img className="arrow" src={arrowDown} alt="arrow down" />
       </li>
       <li className="nav-menu-item">
         <a href="#"> Company</a>
-        <img src={arrowDown} alt="arrow down" />
+        <img className="arrow" src={arrowDown} alt="arrow down" />
       </li>
       <li className="nav-menu-item">
         <a href="#">Careers</a>
