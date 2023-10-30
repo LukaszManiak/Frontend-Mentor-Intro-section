@@ -24,7 +24,7 @@ function App() {
   }
 
   function changeImgSrc() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 868) {
       setImgSrc(imageHero);
       setMobileView(true);
       setIsOpen(false);

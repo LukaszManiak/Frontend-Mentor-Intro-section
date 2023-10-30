@@ -98,6 +98,11 @@ h1 {
 .nav-mobile-buttons .register-btn {
   width: 80%;
   margin: 0;
+  transition: all 0.15s ease-in-out;
+}
+.nav-mobile-buttons .register-btn:hover {
+  background-color: var(--almostBlack);
+  color: var(--almostWhite);
 }
 
 .nav-menu-item {
@@ -159,6 +164,7 @@ h1 {
   padding: 0.4em 1.2em;
   border-radius: 0.8rem;
   font-size: 1.6rem;
+  transition: all 0.15s ease-in-out;
 }
 .hero-btn:hover {
   background-color: transparent;
@@ -177,7 +183,11 @@ h1 {
 }
 
 .attribution-p {
-  margin: 10% 2rem 0 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* margin: 2vw 2rem 0 2rem; */
   text-align: center;
 }
 
@@ -196,7 +206,7 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   body {
     font-size: 16px;
   }
@@ -219,5 +229,12 @@ h1 {
   .hero-image {
     width: 100%;
     margin-bottom: 2rem;
+  }
+
+  .attribution-p {
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 5% 0rem 0 0rem;
   }
 }
