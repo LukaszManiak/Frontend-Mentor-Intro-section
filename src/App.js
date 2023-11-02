@@ -12,6 +12,12 @@ import client3 from "./images/client-meet.svg";
 import arrowUp from "./images/icon-arrow-up.svg";
 import arrowDown from "./images/icon-arrow-down.svg";
 
+// dropdown icons
+import calendar from "./images/icon-calendar.svg";
+import planning from "./images/icon-planning.svg";
+import reminders from "./images/icon-reminders.svg";
+import todo from "./images/icon-todo.svg";
+
 const clients = [client1, client2, client3, client4];
 
 function App() {
@@ -38,12 +44,14 @@ function App() {
 
   return (
     <>
+      {/* dark bg on mobile menu open */}
       <div className={isOpen ? "dark-bg" : "dark-bg hidden"}></div>
       <Navbar
         mobileView={mobileView}
         onChangeOpen={changeOpenStatus}
         isOpen={isOpen}
       />
+      {/* mobile menu */}
       <div className={isOpen ? "mobile-menu" : "mobile-menu hidden"}>
         {" "}
         <NavMenu className={"nav-mobile-menu"} />
@@ -144,23 +152,60 @@ function AttributionP() {
 }
 
 function NavMenu({ className }) {
+  const [openFeatures, setOpenFeatures] = useState(false);
+  const [openCompany, setOpenCompany] = useState(false);
+
   return (
-    <ul className={className}>
-      <li className="nav-menu-item">
-        <a href="#">Features</a>
-        <img className="arrow" src={arrowDown} alt="arrow down" />
-      </li>
-      <li className="nav-menu-item">
-        <a href="#"> Company</a>
-        <img className="arrow" src={arrowDown} alt="arrow down" />
-      </li>
-      <li className="nav-menu-item">
-        <a href="#">Careers</a>
-      </li>
-      <li className="nav-menu-item">
-        <a href="#">About</a>
-      </li>
-    </ul>
+    <>
+      <ul className={className}>
+        <li className="nav-menu-item">
+          Features
+          <img className="arrow" src={arrowDown} alt="arrow down" />
+        </li>
+        <li className="nav-menu-item">
+          <a href="#"> Company</a>
+          <img className="arrow" src={arrowDown} alt="arrow down" />
+        </li>
+        <li className="nav-menu-item">
+          <a href="#">Careers</a>
+        </li>
+        <li className="nav-menu-item">
+          <a href="#">About</a>
+        </li>
+      </ul>
+      <div className={`drop-list-container features`}>
+        <ul className="drop-list">
+          <li>
+            <img src={todo} alt="arrow down" /> Todo List
+          </li>
+          <li>
+            <img src={calendar} alt="arrow down" /> Calendar
+          </li>
+          <li>
+            <img src={reminders} alt="arrow down" /> Reminders
+          </li>
+          <li>
+            {" "}
+            <img src={planning} alt="arrow down" /> Planning
+          </li>
+        </ul>
+      </div>
+      <div className={`drop-list-container company`}>
+        <ul className="drop-list">
+          <li>History</li>
+          <li>Our Team</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function DropList({ children, className }) {
+  return (
+    <div className={`drop-list-container ${className}`}>
+      <ul className="drop-list">{children}</ul>
+    </div>
   );
 }
 export default App;
