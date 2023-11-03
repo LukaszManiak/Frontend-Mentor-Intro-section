@@ -155,16 +155,31 @@ function NavMenu({ className }) {
   const [openFeatures, setOpenFeatures] = useState(false);
   const [openCompany, setOpenCompany] = useState(false);
 
+  function handleFeaturesClick() {
+    setOpenFeatures(!openFeatures);
+  }
+  function handleCompanyClick() {
+    setOpenCompany(!openCompany);
+  }
+
   return (
     <>
       <ul className={className}>
-        <li className="nav-menu-item">
+        <li onClick={() => handleFeaturesClick()} className="nav-menu-item">
           Features
-          <img className="arrow" src={arrowDown} alt="arrow down" />
+          <img
+            className="arrow"
+            src={!openFeatures ? arrowDown : arrowUp}
+            alt="arrow down"
+          />
         </li>
-        <li className="nav-menu-item">
-          <a href="#"> Company</a>
-          <img className="arrow" src={arrowDown} alt="arrow down" />
+        <li onClick={() => handleCompanyClick()} className="nav-menu-item">
+          Company
+          <img
+            className="arrow"
+            src={!openCompany ? arrowDown : arrowUp}
+            alt="arrow down"
+          />
         </li>
         <li className="nav-menu-item">
           <a href="#">Careers</a>
@@ -173,7 +188,7 @@ function NavMenu({ className }) {
           <a href="#">About</a>
         </li>
       </ul>
-      <div className={`drop-list-container features`}>
+      <div className={openFeatures ? `drop-list-container features` : "hidden"}>
         <ul className="drop-list">
           <li>
             <img src={todo} alt="arrow down" /> Todo List
@@ -190,7 +205,7 @@ function NavMenu({ className }) {
           </li>
         </ul>
       </div>
-      <div className={`drop-list-container company`}>
+      <div className={openCompany ? `drop-list-container company` : "hidden"}>
         <ul className="drop-list">
           <li>History</li>
           <li>Our Team</li>
