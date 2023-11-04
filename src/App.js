@@ -54,7 +54,7 @@ function App() {
       {/* mobile menu */}
       <div className={isOpen ? "mobile-menu" : "mobile-menu hidden"}>
         {" "}
-        <NavMenu className={"nav-mobile-menu"} />
+        <NavMenu mobileView={mobileView} className={"nav-mobile-menu"} />
         <NavButtons className={"nav-mobile-buttons "} />
       </div>
       <HeroSection heroImg={imgSrc} />
@@ -68,11 +68,11 @@ function Navbar({ mobileView, onChangeOpen, isOpen }) {
   return (
     <nav className="navbar">
       <div className="left-side-nav">
-        <a href="#">
-          <img src={logoSvg} alt="" />
-        </a>
+        <img src={logoSvg} alt="" />
 
-        {mobileView && <NavMenu className={"nav-desktop-menu"} />}
+        {mobileView && (
+          <NavMenu mobileView={mobileView} className={"nav-desktop-menu"} />
+        )}
       </div>
 
       <div className="right-side-nav">
@@ -151,7 +151,7 @@ function AttributionP() {
   );
 }
 
-function NavMenu({ className }) {
+function NavMenu({ mobileView, className }) {
   const [openFeatures, setOpenFeatures] = useState(false);
   const [openCompany, setOpenCompany] = useState(false);
 
@@ -173,6 +173,34 @@ function NavMenu({ className }) {
             alt="arrow down"
           />
         </li>
+        <div
+          className={
+            openFeatures
+              ? mobileView
+                ? `drop-list-container features`
+                : "drop-list-mobile-container  "
+              : "hidden"
+          }
+        >
+          <ul className="drop-list">
+            <li>
+              <img src={todo} alt="arrow down" /> <a>Todo List</a>
+            </li>
+            <li>
+              <img src={calendar} alt="arrow down" />
+              <a> Calendar</a>
+            </li>
+            <li>
+              <img src={reminders} alt="arrow down" />
+              <a> Reminders</a>
+            </li>
+            <li>
+              {" "}
+              <img src={planning} alt="arrow down" />
+              <a> Planning</a>
+            </li>
+          </ul>
+        </div>
         <li onClick={() => handleCompanyClick()} className="nav-menu-item">
           Company
           <img
@@ -181,37 +209,35 @@ function NavMenu({ className }) {
             alt="arrow down"
           />
         </li>
+        <div
+          className={
+            openCompany
+              ? mobileView
+                ? `drop-list-container company`
+                : "drop-list-mobile-container "
+              : "hidden"
+          }
+        >
+          <ul className="drop-list">
+            <li>
+              <a>History</a>
+            </li>
+            <li>
+              <a>Our Team</a>
+            </li>
+            <li>
+              <a>Blog</a>
+            </li>
+          </ul>
+        </div>
         <li className="nav-menu-item">
           <a href="#">Careers</a>
         </li>
+
         <li className="nav-menu-item">
           <a href="#">About</a>
         </li>
       </ul>
-      <div className={openFeatures ? `drop-list-container features` : "hidden"}>
-        <ul className="drop-list">
-          <li>
-            <img src={todo} alt="arrow down" /> Todo List
-          </li>
-          <li>
-            <img src={calendar} alt="arrow down" /> Calendar
-          </li>
-          <li>
-            <img src={reminders} alt="arrow down" /> Reminders
-          </li>
-          <li>
-            {" "}
-            <img src={planning} alt="arrow down" /> Planning
-          </li>
-        </ul>
-      </div>
-      <div className={openCompany ? `drop-list-container company` : "hidden"}>
-        <ul className="drop-list">
-          <li>History</li>
-          <li>Our Team</li>
-          <li>Blog</li>
-        </ul>
-      </div>
     </>
   );
 }
