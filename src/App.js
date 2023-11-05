@@ -266,11 +266,11 @@ function NavMenu({ mobileView, className }) {
   );
 }
 
-function DropList({ children, className }) {
-  return (
-    <div className={`drop-list-container ${className}`}>
-      <ul className="drop-list">{children}</ul>
-    </div>
-  );
-}
+// function DropList({ children, className }) {
+//   return (
+//     <div className={`drop-list-container ${className}`}>
+//       <ul className="drop-list">{children}</ul>
+//     </div>
+//   );
+// }
 export default App;
