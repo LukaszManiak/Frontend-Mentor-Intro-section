@@ -40,6 +40,7 @@ function App() {
     }
   }
 
+  window.addEventListener("load", changeImgSrc);
   window.addEventListener("resize", changeImgSrc);
 
   return (
