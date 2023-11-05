@@ -203,8 +203,8 @@ h1 {
 
   border-radius: 0.7rem;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   background-color: var(--almostWhite);
   box-shadow: 0px 0px 35px -22px rgba(20, 20, 20, 1);
@@ -228,7 +228,7 @@ h1 {
 
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
 }
 
@@ -246,8 +246,8 @@ h1 {
 
   border-radius: 0.7rem;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   background-color: var(--almostWhite);
 }
