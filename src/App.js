@@ -98,7 +98,7 @@ function Button({ children, className, onClick }) {
 function NavButtons({ className }) {
   return (
     <div className={className}>
-      <a href="#" role="button">
+      <a href="/jakaś-strona" role="button">
         Login
       </a>
       <Button className={"register-btn"}>Register</Button>
@@ -186,18 +186,21 @@ function NavMenu({ mobileView, className }) {
         >
           <ul className="drop-list">
             <li>
-              <img src={todo} alt="arrow down" /> <a>Todo List</a>
+              <img src={todo} alt="arrow down" />{" "}
+              <a href="/jakaś-strona" role="button">
+                Todo List
+              </a>
             </li>
             <li>
               <img src={calendar} alt="arrow down" />
-              <a href="#" role="button">
+              <a href="/jakaś-strona" role="button">
                 {" "}
                 Calendar
               </a>
             </li>
             <li>
               <img src={reminders} alt="arrow down" />
-              <a href="#" role="button">
+              <a href="/jakaś-strona" role="button">
                 {" "}
                 Reminders
               </a>
@@ -205,7 +208,7 @@ function NavMenu({ mobileView, className }) {
             <li>
               {" "}
               <img src={planning} alt="arrow down" />
-              <a href="#" role="button">
+              <a href="/jakaś-strona" role="button">
                 {" "}
                 Planning
               </a>
@@ -231,30 +234,30 @@ function NavMenu({ mobileView, className }) {
         >
           <ul className="drop-list">
             <li>
-              <a href="#" role="button">
+              <a href="/jakaś-strona" role="button">
                 History
               </a>
             </li>
             <li>
-              <a href="#" role="button">
+              <a href="/jakaś-strona" role="button">
                 Our Team
               </a>
             </li>
             <li>
-              <a href="#" role="button">
+              <a href="/jakaś-strona" role="button">
                 Blog
               </a>
             </li>
           </ul>
         </div>
         <li className="nav-menu-item">
-          <a href="#" role="button">
+          <a href="/jakaś-strona" role="button">
             Careers
           </a>
         </li>
 
         <li className="nav-menu-item">
-          <a href="#" role="button">
+          <a href="/jakaś-strona" role="button">
             About
           </a>
         </li>
