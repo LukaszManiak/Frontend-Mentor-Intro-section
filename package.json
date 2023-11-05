@@ -37,6 +37,8 @@
     ]
   },
   "devDependencies": {
-    "parcel": "^2.10.2"
+    
+    "parcel": "^2.10.2",
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.5"
   }
 }

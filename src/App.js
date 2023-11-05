@@ -127,7 +127,7 @@ function HeroSection({ heroImg }) {
           })}
         </div>
       </div>
-      <img className="hero-image" src={heroImg} alt="hero-image" />
+      <img className="hero-image" src={heroImg} alt="hero" />
     </div>
   );
 }
@@ -188,16 +188,16 @@ function NavMenu({ mobileView, className }) {
             </li>
             <li>
               <img src={calendar} alt="arrow down" />
-              <a> Calendar</a>
+              <a href="#"> Calendar</a>
             </li>
             <li>
               <img src={reminders} alt="arrow down" />
-              <a> Reminders</a>
+              <a href="#"> Reminders</a>
             </li>
             <li>
               {" "}
               <img src={planning} alt="arrow down" />
-              <a> Planning</a>
+              <a href="#"> Planning</a>
             </li>
           </ul>
         </div>
@@ -220,13 +220,13 @@ function NavMenu({ mobileView, className }) {
         >
           <ul className="drop-list">
             <li>
-              <a>History</a>
+              <a href="#">History</a>
             </li>
             <li>
-              <a>Our Team</a>
+              <a href="#">Our Team</a>
             </li>
             <li>
-              <a>Blog</a>
+              <a href="#">Blog</a>
             </li>
           </ul>
         </div>
