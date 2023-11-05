@@ -98,7 +98,9 @@ function Button({ children, className, onClick }) {
 function NavButtons({ className }) {
   return (
     <div className={className}>
-      <a href="#">Login</a>
+      <a href="#" role="button">
+        Login
+      </a>
       <Button className={"register-btn"}>Register</Button>
     </div>
   );
@@ -188,16 +190,25 @@ function NavMenu({ mobileView, className }) {
             </li>
             <li>
               <img src={calendar} alt="arrow down" />
-              <a href="#"> Calendar</a>
+              <a href="#" role="button">
+                {" "}
+                Calendar
+              </a>
             </li>
             <li>
               <img src={reminders} alt="arrow down" />
-              <a href="#"> Reminders</a>
+              <a href="#" role="button">
+                {" "}
+                Reminders
+              </a>
             </li>
             <li>
               {" "}
               <img src={planning} alt="arrow down" />
-              <a href="#"> Planning</a>
+              <a href="#" role="button">
+                {" "}
+                Planning
+              </a>
             </li>
           </ul>
         </div>
@@ -220,22 +231,32 @@ function NavMenu({ mobileView, className }) {
         >
           <ul className="drop-list">
             <li>
-              <a href="#">History</a>
+              <a href="#" role="button">
+                History
+              </a>
             </li>
             <li>
-              <a href="#">Our Team</a>
+              <a href="#" role="button">
+                Our Team
+              </a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a href="#" role="button">
+                Blog
+              </a>
             </li>
           </ul>
         </div>
         <li className="nav-menu-item">
-          <a href="#">Careers</a>
+          <a href="#" role="button">
+            Careers
+          </a>
         </li>
 
         <li className="nav-menu-item">
-          <a href="#">About</a>
+          <a href="#" role="button">
+            About
+          </a>
         </li>
       </ul>
     </>
