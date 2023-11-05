@@ -147,7 +147,11 @@ function AttributionP() {
         Frontend Mentor
       </a>
       . Coded by{" "}
-      <a className="attribution-link" href="https://github.com/LukaszManiak">
+      <a
+        className="attribution-link"
+        href="https://github.com/LukaszManiak"
+        role="button"
+      >
         Łukasz Maniak
       </a>
       .
