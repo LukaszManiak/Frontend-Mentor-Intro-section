@@ -118,9 +118,10 @@ function HeroSection({ heroImg }) {
         </p>
         <Button className={"hero-btn"}>Learn more</Button>
         <div className="clients-container">
-          {clients.map((client) => {
+          {clients.map((client, index) => {
             return (
               <img
+                key={index}
                 className="client"
                 src={client}
                 alt={"client" + clients.indexOf(client)}
