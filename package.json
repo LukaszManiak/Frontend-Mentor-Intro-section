@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "copyfiles -u 1 images/* dist/images && copyfiles -u 1 icons/* dist/icons && parcel build index.html --dist-dir ./dist",
+    "build": "react-scripts build ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
