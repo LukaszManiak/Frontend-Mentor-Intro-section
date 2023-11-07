@@ -38,7 +38,7 @@ Users should be able to:
 ## Author
 
 - Frontend Mentor - [Lukasz Maniak](https://www.frontendmentor.io/profile/Mejniak)
-- GitHub- [Lukasz Maniak](https://github.com/Mejniak)
+- GitHub- [Lukasz Maniak](https://github.com/LukaszManiak)
 
 ### Screenshots
 
