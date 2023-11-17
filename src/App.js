@@ -79,7 +79,12 @@ function Navbar({ mobileView, onChangeOpen, isOpen }) {
       <div className="right-side-nav">
         {mobileView && <NavButtons />}
         {!mobileView && (
-          <Button onClick={onChangeOpen} className={"hamburger-menu-btn"}>
+          <Button
+            onClick={onChangeOpen}
+            className={
+              isOpen ? "hamburger-menu-btn opened" : "hamburger-menu-btn"
+            }
+          >
             <img src={!isOpen ? menuSvg : closeSvg} alt="hamburger-menu-icon" />
           </Button>
         )}
